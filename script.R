@@ -1,3 +1,4 @@
+#this was about the glodap
 unzip("./data/GLODAPv2 Merged Master File.csv.zip")
 glodap <- read.csv("./data/GLODAPv2 Merged Master File.csv")
 head(glodap)
@@ -15,7 +16,7 @@ datos_APO <- bind_rows(files_list) %>% tidyr::separate(Date, into = c("year", "s
 write.csv(datos_APO, "Datos_APO.csv")
 head(datos_APO)
 library(ggplot2)
-datos_APO %>% ggplot(aes(x= year, y = Value))+
+datos_APO %>% ggplot(aes(x = year, y = Value)) +
                          geom_point()
 
 
@@ -31,6 +32,7 @@ mean_APOobs <- datos_APO %>% group_by(year) %>%
     summarize(mean = mean(Value),
               meanFit = mean(Fit),
               meanFitDTR = mean(FitDtr))
+
 png("./img/res.png")
 plot(mean_APOobs$year, mean_APOobs$mean, col ="darkgreen", ylim = c(-350, 100), pch =19)
 points(dw$Year,dw$APOobserved, pch =21)
