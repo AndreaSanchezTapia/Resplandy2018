@@ -1,0 +1,90 @@
+---
+title: "Our team's research data assessment report"
+author: 'Group 1: Ignacio A, Ignacio E, Marco, Ivan, Alan, Andrea'
+date: "7/12/2018"
+output:
+  slidy_presentation: default
+  ioslides_presentation: default
+---
+
+## The paper
+
+We reviewed Resplandy et al 2018 - Quantification of ocean heat uptake from changes in atmospheric O2 and CO2 composition - Nature 563, pages105–108 (2018) 
+
+DOI https://doi.org/10.1038/s41586-018-0651-8
+
+They propose a new method* to assess ocean warming, based on atmospheric calculations of CO2 and O2 rather than hydrological/ocean temperature data
+
+![](img/model.png)
+
+
+
+---
+
+## Where did we find the data
+
+1. They use __APO__, O2, CO2 data from __Scripps O2 program__ http://scrippso2.ucsd.edu/apo-data. 
+
+2. They also use other databases with hydrological measurements, such as the __GLODAPv2__ data:
+
+https://cdiac.ess-dive.lbl.gov/ftp/oceans/GLODAPv2/Data_Products/data_product/
+
+Olsen, A., R. M. Key, S. van Heuven, S. K. Lauvset, A. Velo, X. Lin, C. Schirnick, A. Kozyr, T. Tanhua, M. Hoppema, 
+S. Jutterström, R. Steinfeldt, E. Jeansson, M. Ishii, F. F. Pérez and T. Suzuki. The Global Ocean Data Analysis Project 
+version 2 (GLODAPv2) - an internally consistent data product for the world ocean, Earth System Science Data, 8, 297-323, 2016. 
+doi: 10.5194/essd-8-297-2016    
+
+3. They link code from four earth system models 
+
+---
+
+## FAIRness assessment
+
+### APO, CO2, O2 data
+
+### Findable
+
+- [X] A persistent identifier is assigned to your data      
+- [X] There are rich metadata, describing your data
+- [X] The metadata are online in a searchable resource e.g. a catalogue or data repository
+- [-] The metadata record specifies the persistent identifier
+
+### Accessible
+
+- [X] Following the persistent ID will take you to the data or associated metadata
+- [X] The protocol by which data can be retrieved follows recognised standards 
+- [X] The access procedure includes authentication and authorisation steps, if necessary
+- [X] Metadata are accessible, wherever possible, even if the data aren’t
+
+---
+
+### Interoperable
+
+- [X] Data is provided in commonly understood and preferably open formats
+- [?] The metadata provided follows relevant standards
+- [X] Controlled vocabularies, keywords, thesauri or ontologies are used where possible
+- [?] Qualified references and links are provided to other related data
+
+### Reusable
+
+- [X] The data are accurate and well described with many relevant attributes
+- [-] The data have a clear and accessible data usage license
+- [X] It is clear how, why and by whom the data have been created and processed
+- [?] The data and metadata meet relevant domain standards.
+
+---
+
+We downloaded the monthly data for APO and CO2 and summarized it to obtain mean values per year. We compared the values with the data from fig 3. 
+
+```{r remedy001, echo=FALSE, out.width=380}
+knitr::include_graphics("./img/fig3.png")
+knitr::include_graphics("./img/res.png")
+```
+
+
+---
+
+
+```{r remedy003, echo=FALSE, out.width=700}
+knitr::include_graphics("./img/text.png")
+```
