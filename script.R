@@ -1,10 +1,14 @@
-#this was about the glodap
-unzip("./data/GLODAPv2 Merged Master File.csv.zip")
+#this was about the glodap, download and unzip, the csv is heavy!
+#unzip("./data/GLODAPv2 Merged Master File.csv.zip")
 glodap <- read.csv("./data/GLODAPv2 Merged Master File.csv")
-head(glodap)
+#ivan worked on this
+
+#APO data
 library(dplyr)
-files <- list.files("./data/APO", full.names = T)
-source <- list.files("./data/APO", full.names = F)
+library(stringr)
+files <- list.files("./data/APO", full.names = T, pattern = ".txt$")
+source <- list.files("./data/APO", full.names = F, pattern = ".txt$") %>%
+    str_split(".txt", simplify = T) %>% data.frame() %>% dplyr::select(1)
 files_list <- list()
 files <- files[c(1,4,6)]
 for (i in 1:length(files)) {
